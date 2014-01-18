@@ -1,0 +1,45 @@
+﻿@model MVCCourier.Models.LoginModel
+
+@{
+    ViewBag.Title = "Zaloguj się";
+}
+
+@section Header {
+    @Html.ActionLink("Anuluj", "Index", "Home", null, new { data_icon = "arrow-l", data_rel = "back" })
+    <h1>@ViewBag.Title</h1>
+}
+
+<p>
+    Aby korzystać z aplikacji, konieczne jest zalogowanie się.
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <ul data-role="listview" data-inset="true">
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.UserName)
+            @Html.PasswordFor(m => m.Password)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.RememberMe)
+            @Html.CheckBoxFor(m => m.RememberMe)
+        </li>
+
+        <li data-role="fieldcontain">
+            <input type="submit" value="Potwierdź" />
+        </li>
+    </ul>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

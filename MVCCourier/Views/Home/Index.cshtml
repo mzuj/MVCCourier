@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = User.Identity.Name;
+}
+
+<h2>@ViewBag.Message</h2>
+
+<ul data-role="listview" data-inset="true">
+    <li>@Html.ActionLink("Wyświetl liste przesyłek", "Index", "Packages")</li>
+    <li>@Html.ActionLink("Zmień hasło", "ChangePassword", "Account")</li>
+    <li>@Html.ActionLink("Wyloguj", "LogOff", "Account")</li>
+    @if (User.IsInRole("Admin"))
+    {
+        <br />
+        <li>@Html.ActionLink("Panel Administratora", "Index", "Administration")</li>
+    }
+</ul>

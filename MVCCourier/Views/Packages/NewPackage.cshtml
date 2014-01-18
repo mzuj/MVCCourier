@@ -1,0 +1,72 @@
+﻿@model MVCCourier.Models.PackageModel
+
+@{
+    ViewBag.Title = User.Identity.Name;
+}
+
+<h2>Uwórz nową paczkę</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Category)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Category)
+            @Html.ValidationMessageFor(model => model.Category)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Adress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Adress)
+            @Html.ValidationMessageFor(model => model.Adress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DueDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DueDate)
+            @Html.ValidationMessageFor(model => model.DueDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateDelivered)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateDelivered)
+            @Html.ValidationMessageFor(model => model.DateDelivered)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Courier)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Courier)
+            @Html.ValidationMessageFor(model => model.Courier)
+        </div>
+
+        <p>
+            <input type="submit" value="Utwórz" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Powrót do listy paczek", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

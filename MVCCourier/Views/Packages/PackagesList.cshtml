@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MVCCourier.Models.PackageModel>
+
+@{
+    ViewBag.Title = User.Identity.Name;
+}
+
+@if(HttpContext.Current.User.IsInRole("Admin"))
+{
+<p>
+    @Html.ActionLink("Utwórz nową paczkę", "NewPackage")
+</p>
+}
+
+<ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">Przesyłki</li>
+    @foreach (var item in Model)
+    {
+        if (!item.IsDelivered  || User.IsInRole("Admin"))
+        { 
+            <li>
+                @Html.ActionLink(item.Category + ": " + item.Id + " " + @item.Courier, "Package", new { item.Id })
+                Adres: @item.Adress<br>
+                Dostarczyć do: @item.DueDate<br>
+                Cena: @item.Price<br>
+            </li>
+    }
+    }
+</ul>
+

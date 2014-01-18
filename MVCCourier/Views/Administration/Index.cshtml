@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = User.Identity.Name;
+}
+<center>
+    <h2>
+        Panel administratora
+</h2>
+</center>
+
+<h3>
+Zarządzaj przesyłkami
+</h3>
+    @Html.ActionLink("Utwórz nową przesyłkę", "NewPackage", "Packages")<br />
+    @Html.ActionLink("Wyświetl liste wszystkich przesyłek", "Index", "Packages")<br />
+<h3>
+Zarządzaj użytkownikami
+</h3>
+    @Html.ActionLink("Utwórz użytkownika", "Register", "Account")<br />
+    @Html.ActionLink("Wyświetl listę wszystkich użytkowników", "UsersList") <br />

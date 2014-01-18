@@ -1,0 +1,55 @@
+﻿@model MVCCourier.Models.PackageModel
+
+@{
+    ViewBag.Title = "Package";
+}
+
+<h2>Package</h2>
+
+@using (Html.BeginForm("Package", "Packages", new { Model.IsDelivered }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<fieldset>
+        
+        <strong>@Html.DisplayNameFor(model => model.Category):</strong>
+        @Html.DisplayFor(model => model.Category) <br />
+ 
+        <strong>@Html.DisplayNameFor(model => model.Adress):</strong>
+        @Html.DisplayFor(model => model.Adress) <br />
+   
+        <strong>@Html.DisplayNameFor(model => model.DueDate):</strong>      
+        @Html.DisplayFor(model => model.DueDate) <br />
+        
+        <strong>@Html.DisplayNameFor(model => model.DateDelivered):</strong>
+        @Html.DisplayFor(model => model.DateDelivered) <br />
+
+        <strong>@Html.DisplayNameFor(model => model.Price):</strong>
+        @Html.DisplayFor(model => model.Price) <br />
+
+        <strong>@Html.DisplayNameFor(model => model.Courier):</strong>
+        @Html.DisplayFor(model => model.Courier) <br />
+
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    @Html.LabelFor(m => m.IsDelivered)
+                    @Html.CheckBoxFor(m => m.IsDelivered)
+                </li>
+                <li>
+                    <input type="submit" value="Zapisz zmiany" />
+                </li>
+                <li>@Html.ActionLink("Pokaż na mapie", "Map2", new { id = Model.Id })</li>
+                
+                @if (User.IsInRole("Admin"))
+                { 
+                <li>@Html.ActionLink("Edytuj", "PackageEdit", new { id = Model.Id })</li>
+                <li>@Html.ActionLink("Usuń", "PackageDelete", new { id = Model.Id })</li>
+                }
+                <li>@Html.ActionLink("Powróć do listy", "Index")</li>
+</ul>
+                <a href="http://maps.google.com/maps?saddr=brighton&daddr=timbuktu">show route</a>
+
+</fieldset>
+}
+

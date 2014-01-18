@@ -1,0 +1,28 @@
+﻿@using MVCCourier.Models;
+@model IEnumerable<MVCCourier.Models.RegisterModel>
+
+@{
+    ViewBag.Title = "UsersList";
+}
+
+<h2>UsersList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.UserName |
+            @Html.ActionLink("Edit", "UserEdit", "Account", new { item.Id }, null) |
+            @Html.ActionLink("Details", "UserDetails", "Account", new { item.Id }, null) |
+            @Html.ActionLink("Delete", "UserDelete", "Account", new { item.Id, item.UserName }, null)
+        </td>
+    </tr>
+}
+
+</table>
