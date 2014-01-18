@@ -278,7 +278,7 @@
     <Content Include="Views\Packages\PackagesList.cshtml" />
     <Content Include="Views\Packages\NewPackage.cshtml" />
     <Content Include="Views\Packages\Package.cshtml" />
-    <Content Include="Views\Shared\BłądUprawnień.cshtml" />
+    <Content Include="Views\Shared\BladUprawnien.cshtml" />
     <Content Include="Views\Administration\Index.cshtml" />
     <Content Include="Views\Shared\_HomePartial.cshtml" />
     <Content Include="Views\Administration\UsersList.cshtml" />
