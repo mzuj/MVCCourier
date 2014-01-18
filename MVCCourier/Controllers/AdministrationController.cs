@@ -14,7 +14,7 @@ namespace MVCCourier.Controllers
         public ActionResult Index()
         {
             if (!User.IsInRole("Admin"))
-                return View("BłądUprawnień");
+                return View("BlaUprawnien");
             else
                 return View();
         }
@@ -22,7 +22,7 @@ namespace MVCCourier.Controllers
         public ActionResult UsersList()
         {
             if (!User.IsInRole("Admin"))
-                return View("BłądUprawnień");
+                return View("BladUprawnien");
             else
             {
                 var db = new AccountDataContext();
