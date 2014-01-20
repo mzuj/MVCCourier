@@ -102,9 +102,9 @@ namespace MVCCourier.Controllers
                         Roles.AddUserToRole(user.UserName, "Admin");
                     }
                     FormsAuthentication.SetAuthCookie(user.UserName, createPersistentCookie: false);
-                    var db = new AccountDataContext();
-                    db.Users.Add(user);
-                    db.SaveChanges();
+                    //var db = new AccountDataContext();
+                    //db.Users.Add(user);
+                    //db.SaveChanges();
 
                     return RedirectToAction("Index", "Home");
                 }
