@@ -12,7 +12,7 @@ namespace MVCCourier.Models
 
         static PackageDataContext()
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<PackageDataContext>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<PackageDataContext>());
         }
     }
 }

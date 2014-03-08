@@ -1,10 +1,9 @@
 ﻿@model MVCCourier.Models.PackageModel
 
 @{
-    ViewBag.Title = "Package";
+    ViewBag.Title = "Zlecenie id: " + Model.Id;
 }
 
-<h2>Package</h2>
 
 @using (Html.BeginForm("Package", "Packages", new { Model.IsDelivered }))
 {

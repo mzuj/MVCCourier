@@ -1,0 +1,64 @@
+﻿@model MVCCourier.Models.PackageModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PackageModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Category)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Adress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Adress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DueDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DueDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateDelivered)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateDelivered)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsDelivered)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsDelivered)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Courier)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Courier)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
