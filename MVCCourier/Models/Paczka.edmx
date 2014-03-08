@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ModelPaczka.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="PackageModels">
           <Key>
             <PropertyRef Name="Id" />
@@ -18,14 +18,14 @@
           <Property Name="IsDelivered" Type="bit" Nullable="false" />
           <Property Name="Courier" Type="nvarchar(max)" />
         </EntityType>
-        <EntityContainer Name="ModelStoreContainer">
+        <EntityContainer Name="ModelPaczkaStoreContainer">
           <EntitySet Name="PackageModels" EntityType="Self.PackageModels" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ModelPaczka" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="PackageModel">
           <Key>
             <PropertyRef Name="Id" />
@@ -39,7 +39,7 @@
           <Property Name="IsDelivered" Type="Boolean" Nullable="false" />
           <Property Name="Courier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PaczkaEntity" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PackageModels" EntityType="Self.PackageModel" />
         </EntityContainer>
       </Schema>
@@ -47,9 +47,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="ModelPaczkaStoreContainer" CdmEntityContainer="PaczkaEntity">
           <EntitySetMapping Name="PackageModels">
-            <EntityTypeMapping TypeName="Model.PackageModel">
+            <EntityTypeMapping TypeName="ModelPaczka.PackageModel">
               <MappingFragment StoreEntitySet="PackageModels">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Category" ColumnName="Category" />

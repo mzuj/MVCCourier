@@ -150,32 +150,32 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
-    <Compile Include="Controllers\Default1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PackagesController.cs" />
+    <Compile Include="Controllers\PaczkaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountDataContext.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PackageModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PackageModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\PackageDataContext.cs" />
     <Compile Include="Models\PackageModel.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Paczka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Paczka.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Paczka.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Paczka.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Paczka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Paczka.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Paczka.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -183,14 +183,6 @@
     <Content Include="App_Data\aspnet-MVCCourier-20131207190029.mdf" />
     <Content Include="App_Data\aspnet-MVCCourier-20131207190029_log.ldf">
       <DependentUpon>aspnet-MVCCourier-20131207190029.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\MVCCourier.Models.AccountDataContext.mdf" />
-    <Content Include="App_Data\MVCCourier.Models.AccountDataContext_log.ldf">
-      <DependentUpon>MVCCourier.Models.AccountDataContext.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\MVCCourier.Models.PackageDataContext.mdf" />
-    <Content Include="App_Data\MVCCourier.Models.PackageDataContext_log.ldf">
-      <DependentUpon>MVCCourier.Models.PackageDataContext.mdf</DependentUpon>
     </Content>
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\icons-18-black.png" />
@@ -259,22 +251,22 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\PackageModel.edmx">
+    <EntityDeploy Include="Models\Paczka.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PackageModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Paczka.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\Paczka.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PackageModel.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Paczka.edmx</DependentUpon>
+      <LastGenOutput>Paczka.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\PackageModel.edmx.diagram">
-      <DependentUpon>PackageModel.edmx</DependentUpon>
+    <Content Include="Models\Paczka.edmx.diagram">
+      <DependentUpon>Paczka.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\Paczka.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PackageModel.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>Paczka.edmx</DependentUpon>
+      <LastGenOutput>Paczka.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -330,6 +322,11 @@
     <Content Include="Views\Default1\Create.cshtml" />
     <Content Include="Views\Default1\Edit.cshtml" />
     <Content Include="Views\Default1\Delete.cshtml" />
+    <Content Include="Views\Paczka\Index.cshtml" />
+    <Content Include="Views\Paczka\Details.cshtml" />
+    <Content Include="Views\Paczka\Create.cshtml" />
+    <Content Include="Views\Paczka\Edit.cshtml" />
+    <Content Include="Views\Paczka\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -9,24 +9,24 @@ using MVCCourier.Models;
 
 namespace MVCCourier.Controllers
 {
-    public class Default1Controller : Controller
+    public class PaczkaController : Controller
     {
-        private PackageDataContext db = new PackageDataContext();
+        private PaczkaEntity db = new PaczkaEntity();
 
         //
-        // GET: /Default1/
+        // GET: /Paczka/
 
         public ActionResult Index()
         {
-            return View(db.Packages.ToList());
+            return View(db.PackageModels.ToList());
         }
 
         //
-        // GET: /Default1/Details/5
+        // GET: /Paczka/Details/5
 
         public ActionResult Details(long id = 0)
         {
-            PackageModel packagemodel = db.Packages.Find(id);
+            PackageModel packagemodel = db.PackageModels.Find(id);
             if (packagemodel == null)
             {
                 return HttpNotFound();
@@ -35,7 +35,7 @@ namespace MVCCourier.Controllers
         }
 
         //
-        // GET: /Default1/Create
+        // GET: /Paczka/Create
 
         public ActionResult Create()
         {
@@ -43,7 +43,7 @@ namespace MVCCourier.Controllers
         }
 
         //
-        // POST: /Default1/Create
+        // POST: /Paczka/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -51,7 +51,7 @@ namespace MVCCourier.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Packages.Add(packagemodel);
+                db.PackageModels.Add(packagemodel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -60,11 +60,11 @@ namespace MVCCourier.Controllers
         }
 
         //
-        // GET: /Default1/Edit/5
+        // GET: /Paczka/Edit/5
 
         public ActionResult Edit(long id = 0)
         {
-            PackageModel packagemodel = db.Packages.Find(id);
+            PackageModel packagemodel = db.PackageModels.Find(id);
             if (packagemodel == null)
             {
                 return HttpNotFound();
@@ -73,7 +73,7 @@ namespace MVCCourier.Controllers
         }
 
         //
-        // POST: /Default1/Edit/5
+        // POST: /Paczka/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -89,11 +89,11 @@ namespace MVCCourier.Controllers
         }
 
         //
-        // GET: /Default1/Delete/5
+        // GET: /Paczka/Delete/5
 
         public ActionResult Delete(long id = 0)
         {
-            PackageModel packagemodel = db.Packages.Find(id);
+            PackageModel packagemodel = db.PackageModels.Find(id);
             if (packagemodel == null)
             {
                 return HttpNotFound();
@@ -102,14 +102,14 @@ namespace MVCCourier.Controllers
         }
 
         //
-        // POST: /Default1/Delete/5
+        // POST: /Paczka/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            PackageModel packagemodel = db.Packages.Find(id);
-            db.Packages.Remove(packagemodel);
+            PackageModel packagemodel = db.PackageModels.Find(id);
+            db.PackageModels.Remove(packagemodel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
