@@ -317,11 +317,6 @@
     <Content Include="Views\Packages\PackageDelete.cshtml" />
     <Content Include="Views\Packages\Map.cshtml" />
     <Content Include="Views\Packages\Map2.cshtml" />
-    <Content Include="Views\Default1\Index.cshtml" />
-    <Content Include="Views\Default1\Details.cshtml" />
-    <Content Include="Views\Default1\Create.cshtml" />
-    <Content Include="Views\Default1\Edit.cshtml" />
-    <Content Include="Views\Default1\Delete.cshtml" />
     <Content Include="Views\Paczka\Index.cshtml" />
     <Content Include="Views\Paczka\Details.cshtml" />
     <Content Include="Views\Paczka\Create.cshtml" />
