@@ -19,12 +19,7 @@ namespace MVCCourier.Models
             : base("name=PaczkaEntity")
         {
         }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
+        
         public DbSet<PackageModel> PackageModels { get; set; }
     }
 }

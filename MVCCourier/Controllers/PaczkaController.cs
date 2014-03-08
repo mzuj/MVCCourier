@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MVCCourier.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MVCCourier.Models;
+
 
 namespace MVCCourier.Controllers
 {
